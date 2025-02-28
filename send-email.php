@@ -63,12 +63,10 @@ function sendEmail($name, $email, $message)
   }
 }
 # Return response
-function response($http_code=200 ,$status, $data)
+function response($http_code, $status, $data)
 {
   header('Content-Type: application/json');
-  if ($http_code != 200) {
-    http_response_code($http_code);    
-  }
+  http_response_code($http_code);    
   echo(json_encode([$status => $data]));
 }
 
