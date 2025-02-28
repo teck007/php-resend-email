@@ -2,8 +2,6 @@
 require 'vendor/autoload.php';
 use Resend;
 
-# Load environment variables
-$dotenv->load();
 # Check environment variables
 if (!isset($_ENV['RESEND_API_KEY']) && !isset($_ENV['RESEND_EMAIL_FROM']) && !isset($_ENV['RESEND_EMAIL_TO'])) {
   response(500, 'error', 'Missing environment variables');
