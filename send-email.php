@@ -65,7 +65,7 @@ function response($http_code, $status, $data)
 {
   header('Content-Type: application/json');
   http_response_code($http_code);    
-  echo(json_encode([$status => $data]));
+  die(json_encode([$status => $data]));
 }
 
 validateData($name, $email, $message);
